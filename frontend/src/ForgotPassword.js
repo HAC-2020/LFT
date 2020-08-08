@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ForgotInSide() {
+export default function ForgotPassword() {
   const classes = useStyles();
 
   return (
