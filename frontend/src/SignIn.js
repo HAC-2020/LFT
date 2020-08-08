@@ -15,9 +15,19 @@ import BasicEntry from "./BasicEntry";
 import Copyright from "./Copyright";
 
 class SignIn extends React.Component {
-  login = e => {
-    e.stopPropagation();
-    axios.post("https://lft-hac.herokuapp.com/api/v1/user/login").then(console.log);
+  state = {
+    email: "",
+    password: "",
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    axios
+      .post("https://lft-hac.herokuapp.com/api/v1/user/login", {
+        user_email: this.state.email,
+        user_password: this.state.password,
+      })
+      .then(console.log);
   };
 
   render() {
@@ -26,7 +36,7 @@ class SignIn extends React.Component {
         <Typography component="h1" variant="h5">
           Sign in to Proctor
         </Typography>
-        <form noValidate>
+        <form noValidate onSubmit={this.handleSubmit}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -36,6 +46,8 @@ class SignIn extends React.Component {
             label="Email Address"
             name="email"
             autoComplete="email"
+            value={this.state.email}
+            onChange={e => this.setState({ email: e.target.value })}
             autoFocus
           />
           <TextField
@@ -47,13 +59,15 @@ class SignIn extends React.Component {
             label="Password"
             type="password"
             id="password"
+            value={this.state.password}
+            onChange={e => this.setState({ password: e.target.value })}
             autoComplete="current-password"
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button type="submit" fullWidth variant="contained" color="primary" onClick={this.login}>
+          <Button type="submit" fullWidth variant="contained" color="primary">
             Sign In
           </Button>
           <Grid container className="forgotpass">
