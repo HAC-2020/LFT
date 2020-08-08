@@ -1,25 +1,13 @@
 const mongoose = require('mongoose');
 
-const QuestionPaperSchema = new mongoose.Schema({
+const AnswerPaperSchema = new mongoose.Schema({
     paper_id: String,
     paper_name: {
         type: String,
         required: [true, 'Must Provide Name!']
     },
     last_modified: Date,
-    paper_duration: {
-        type: Number,
-        required: [true, 'Must Provide duration!']
-    },
-    total_marks: {
-        type: Number,
-        required: [true, 'Must Provide total marks!']
-    },
-    total_questions: {
-        type: Number,
-        required: [true, 'Must Provide total questions!']
-    },
-    questions: {
+    answers: {
         type: Array
     },
     active: {

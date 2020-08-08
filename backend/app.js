@@ -6,6 +6,7 @@ const AppError = require('./utils/AppError');
 const globalErrorHandler = require('./controllers/errorController');
 const userRouter = require('./routes/userRouter');
 const questionPaperRouter = require('./routes/questionPaperRouter');
+const examRouter = require('./routes/examRouter');
 
 const app = express();
 
@@ -17,13 +18,21 @@ app.use(cookieparser());
 // STATIC FILES
 app.use(express.static(`${__dirname}/public`));
 
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', ['*']);
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH');
+    res.append('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
 // ROUTE MIDDLEWARE
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/paper', questionPaperRouter);
+app.use('/api/v1/exam', examRouter);
 
 // ROUTE NOT FOUND
 app.all('*', (req, res, next) => {
-    next(new AppError('404 is a palindrome in base -31. PAGE NOT FOUND.', 404));
+    next(new AppError('PAGE NOT FOUND. 404 is a palindrome in base -31.', 404));
 });
 
 // GLOBAL ERROR HANDLER

@@ -9,6 +9,7 @@ router.use(authController.restrictTo('admin'));
 // FOLLOWING ROUTES ARE RESTRICTED TO ADMIN
 
 router.get('/', questionPaperController.getAllPapers);
+router.get('/:paper_id', questionPaperController.getOnePaper);
 router.post('/create', questionPaperController.createPaper);
 router.patch('/question/add/:paper_id', questionPaperController.addQuestion);
 router.patch('/question/remove/:paper_id/:question_number', questionPaperController.removeQuestion);
