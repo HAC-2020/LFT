@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/2.1.0/tf.min.js" integrity="sha512-NmWdUElrUTt+9qucV5XFNjQ1nXDCbdvv2nK4Riee5LDwQ+LupYocthqKQ01fz6RyLZ8IlcNlckcGoMO4LBvqNQ==" crossorigin="anonymous"></script>
+        <script src='https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0'></script>
+
+    <video id='liveVideo'autoplay controls playsinline ></video>
+    <canvas id='canvas' width='1000px' height="600px" ></canvas>
+    <div id='status'>
+
+    </div>
+    <script>
+        
+ (async ()=>{
+
+
+    const model = await mobilenet.load()
+
+    const status = document.getElementById('status')
+    const canvas = document.getElementById('canvas')
+            const context = canvas.getContext('2d')
+
+
+    var video= document.getElementById("liveVideo")
+
+    navigator.mediaDevices.getUserMedia({audio:true,video:true})
+        .then(stream=>{
+            video.srcObject = stream;
+        })
+
+        predict()
+
+        async function predict(){
+            context.drawImage(video,0,0,1000,600);
+
+            const predictions = await model.classify(canvas)    
+            console.log(predictions)
+            status.innerHTML = `Prediction : ${predictions[0].className} / ${predictions[0].probability}`;
+
+            requestAnimationFrame(predict)
+            // setTimeout(()=>predict(),16.67)
+        }
+
+
+
+     })()
+
+</script>
+    </head>
+</html>
