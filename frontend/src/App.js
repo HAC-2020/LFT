@@ -2,8 +2,8 @@ import React from "react";
 // import Button from '@material-ui/core/Button';
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { pink } from "@material-ui/core/colors";
-import SignIn from "./SignIn";
-import SignUp from "./SignUp";
+import SignInSide from "./SignInSide";
+import ForgotInSide from "./ForgotInSide";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -19,11 +19,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <Router>
         <Switch>
-          <Route path="/register">
-            <SignUp />
+          <Route path="/forgot">
+            <ForgotInSide />
           </Route>
           <Route path="/">
-            <SignIn />
+            <SignInSide />
           </Route>
         </Switch>
       </Router>
