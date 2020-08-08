@@ -1,0 +1,100 @@
+2020-08-07T17:14:26.762678+00:00 app[web.1]: 'a=rtpmap:0 PCMU/8000\r\n' +
+2020-08-07T17:14:26.762679+00:00 app[web.1]: 'a=rtpmap:8 PCMA/8000\r\n' +
+2020-08-07T17:14:26.762679+00:00 app[web.1]: 'a=rtpmap:105 CN/16000\r\n' +
+2020-08-07T17:14:26.762679+00:00 app[web.1]: 'a=rtpmap:13 CN/8000\r\n' +
+2020-08-07T17:14:26.762679+00:00 app[web.1]: 'a=rtpmap:110 telephone-event/48000\r\n' +
+2020-08-07T17:14:26.762680+00:00 app[web.1]: 'a=rtpmap:113 telephone-event/16000\r\n' +
+2020-08-07T17:14:26.762680+00:00 app[web.1]: 'a=rtpmap:126 telephone-event/8000\r\n' +
+2020-08-07T17:14:26.762680+00:00 app[web.1]: 'a=ssrc:1316663597 cname:wuoae+TbZpzuGNXi\r\n' +
+2020-08-07T17:14:26.762680+00:00 app[web.1]: 'm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 102 123 104\r\n' +
+2020-08-07T17:14:26.762681+00:00 app[web.1]: 'c=IN IP4 0.0.0.0\r\n' +
+2020-08-07T17:14:26.762681+00:00 app[web.1]: 'a=rtcp:9 IN IP4 0.0.0.0\r\n' +
+2020-08-07T17:14:26.762681+00:00 app[web.1]: 'a=ice-ufrag:OTRD\r\n' +
+2020-08-07T17:14:26.762682+00:00 app[web.1]: 'a=ice-pwd:YNOFUQlW8uRy65PgF3xkfdpi\r\n' +
+2020-08-07T17:14:26.762682+00:00 app[web.1]: 'a=ice-options:trickle\r\n' +
+2020-08-07T17:14:26.762682+00:00 app[web.1]: 'a=fingerprint:sha-256 FE:19:2E:E8:60:A7:8C:0A:A6:79:88:16:84:05:7F:43:A5:DF:CC:41:D4:AF:E3:F8:55:0D:D2:62:0C:FE:45:C8\r\n' +
+2020-08-07T17:14:26.762682+00:00 app[web.1]: 'a=setup:active\r\n' +
+2020-08-07T17:14:26.762683+00:00 app[web.1]: 'a=mid:1\r\n' +
+2020-08-07T17:14:26.762683+00:00 app[web.1]: 'a=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\n' +
+2020-08-07T17:14:26.762683+00:00 app[web.1]: 'a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\n' +
+2020-08-07T17:14:26.762683+00:00 app[web.1]: 'a=extmap:13 urn:3gpp:video-orientation\r\n' +
+2020-08-07T17:14:26.762684+00:00 app[web.1]: 'a=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\n' +
+2020-08-07T17:14:26.762684+00:00 app[web.1]: 'a=extmap:12 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\n' +
+2020-08-07T17:14:26.762685+00:00 app[web.1]: 'a=extmap:11 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\n' +
+2020-08-07T17:14:26.762685+00:00 app[web.1]: 'a=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\n' +
+2020-08-07T17:14:26.762685+00:00 app[web.1]: 'a=extmap:8 http://tools.ietf.org/html/draft-ietf-avtext-framemarking-07\r\n' +
+2020-08-07T17:14:26.762685+00:00 app[web.1]: 'a=extmap:9 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\n' +
+2020-08-07T17:14:26.762685+00:00 app[web.1]: 'a=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\n' +
+2020-08-07T17:14:26.762686+00:00 app[web.1]: 'a=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\n' +
+2020-08-07T17:14:26.762686+00:00 app[web.1]: 'a=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\n' +
+2020-08-07T17:14:26.762686+00:00 app[web.1]: 'a=sendrecv\r\n' +
+2020-08-07T17:14:26.762686+00:00 app[web.1]: 'a=msid:n45v5EBkU16b3sncOXEEB3JU0cvsvGWnJQWI 60cc70c8-bde4-4fce-b458-2e01f44eb3b6\r\n' +
+2020-08-07T17:14:26.762687+00:00 app[web.1]: 'a=rtcp-mux\r\n' +
+2020-08-07T17:14:26.762687+00:00 app[web.1]: 'a=rtcp-rsize\r\n' +
+2020-08-07T17:14:26.762687+00:00 app[web.1]: 'a=rtpmap:96 VP8/90000\r\n' +
+2020-08-07T17:14:26.762688+00:00 app[web.1]: 'a=rtcp-fb:96 goog-remb\r\n' +
+2020-08-07T17:14:26.762688+00:00 app[web.1]: 'a=rtcp-fb:96 transport-cc\r\n' +
+2020-08-07T17:14:26.762688+00:00 app[web.1]: 'a=rtcp-fb:96 ccm fir\r\n' +
+2020-08-07T17:14:26.762688+00:00 app[web.1]: 'a=rtcp-fb:96 nack\r\n' +
+2020-08-07T17:14:26.762688+00:00 app[web.1]: 'a=rtcp-fb:96 nack pli\r\n' +
+2020-08-07T17:14:26.762688+00:00 app[web.1]: 'a=rtpmap:97 rtx/90000\r\n' +
+2020-08-07T17:14:26.762689+00:00 app[web.1]: 'a=fmtp:97 apt=96\r\n' +
+2020-08-07T17:14:26.762689+00:00 app[web.1]: 'a=rtpmap:98 VP9/90000\r\n' +
+2020-08-07T17:14:26.762689+00:00 app[web.1]: 'a=rtcp-fb:98 goog-remb\r\n' +
+2020-08-07T17:14:26.762689+00:00 app[web.1]: 'a=rtcp-fb:98 transport-cc\r\n' +
+2020-08-07T17:14:26.762689+00:00 app[web.1]: 'a=rtcp-fb:98 ccm fir\r\n' +
+2020-08-07T17:14:26.762689+00:00 app[web.1]: 'a=rtcp-fb:98 nack\r\n' +
+2020-08-07T17:14:26.762690+00:00 app[web.1]: 'a=rtcp-fb:98 nack pli\r\n' +
+2020-08-07T17:14:26.762690+00:00 app[web.1]: 'a=fmtp:98 profile-id=0\r\n' +
+2020-08-07T17:14:26.762690+00:00 app[web.1]: 'a=rtpmap:99 rtx/90000\r\n' +
+2020-08-07T17:14:26.762690+00:00 app[web.1]: 'a=fmtp:99 apt=98\r\n' +
+2020-08-07T17:14:26.762690+00:00 app[web.1]: 'a=rtpmap:100 H264/90000\r\n' +
+2020-08-07T17:14:26.762696+00:00 app[web.1]: 'a=rtcp-fb:100 goog-remb\r\n' +
+2020-08-07T17:14:26.762696+00:00 app[web.1]: 'a=rtcp-fb:100 transport-cc\r\n' +
+2020-08-07T17:14:26.762696+00:00 app[web.1]: 'a=rtcp-fb:100 ccm fir\r\n' +
+2020-08-07T17:14:26.762696+00:00 app[web.1]: 'a=rtcp-fb:100 nack\r\n' +
+2020-08-07T17:14:26.762697+00:00 app[web.1]: 'a=rtcp-fb:100 nack pli\r\n' +
+2020-08-07T17:14:26.762697+00:00 app[web.1]: 'a=fmtp:100 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\n' +
+2020-08-07T17:14:26.762697+00:00 app[web.1]: 'a=rtpmap:101 rtx/90000\r\n' +
+2020-08-07T17:14:26.762697+00:00 app[web.1]: 'a=fmtp:101 apt=100\r\n' +
+2020-08-07T17:14:26.762697+00:00 app[web.1]: 'a=rtpmap:102 red/90000\r\n' +
+2020-08-07T17:14:26.762698+00:00 app[web.1]: 'a=rtpmap:123 rtx/90000\r\n' +
+2020-08-07T17:14:26.762698+00:00 app[web.1]: 'a=fmtp:123 apt=102\r\n' +
+2020-08-07T17:14:26.762698+00:00 app[web.1]: 'a=rtpmap:104 ulpfec/90000\r\n' +
+2020-08-07T17:14:26.762699+00:00 app[web.1]: 'a=ssrc-group:FID 3122349269 443799225\r\n' +
+2020-08-07T17:14:26.762699+00:00 app[web.1]: 'a=ssrc:3122349269 cname:wuoae+TbZpzuGNXi\r\n' +
+2020-08-07T17:14:26.762699+00:00 app[web.1]: 'a=ssrc:443799225 cname:wuoae+TbZpzuGNXi\r\n'
+2020-08-07T17:14:26.762700+00:00 app[web.1]: },
+2020-08-07T17:14:26.762700+00:00 app[web.1]: room: '5241'
+2020-08-07T17:14:26.762700+00:00 app[web.1]: }
+2020-08-07T17:14:26.976669+00:00 app[web.1]: can {
+2020-08-07T17:14:26.976672+00:00 app[web.1]: type: 'candidate',
+2020-08-07T17:14:26.976672+00:00 app[web.1]: label: 0,
+2020-08-07T17:14:26.976673+00:00 app[web.1]: id: '0',
+2020-08-07T17:14:26.976678+00:00 app[web.1]: candidate: 'candidate:1311119880 1 udp 2122262783 2405:204:8005:59e2:24a0:750a:f801:314e 54260 typ host generation 0 ufrag OTRD network-id 2 network-cost 10',
+2020-08-07T17:14:26.976678+00:00 app[web.1]: room: '5241'
+2020-08-07T17:14:26.976678+00:00 app[web.1]: }
+2020-08-07T17:14:26.977643+00:00 app[web.1]: can {
+2020-08-07T17:14:26.977644+00:00 app[web.1]: type: 'candidate',
+2020-08-07T17:14:26.977644+00:00 app[web.1]: label: 0,
+2020-08-07T17:14:26.977645+00:00 app[web.1]: id: '0',
+2020-08-07T17:14:26.977646+00:00 app[web.1]: candidate: 'candidate:3205972436 1 udp 2122194687 192.168.43.180 60152 typ host generation 0 ufrag OTRD network-id 1 network-cost 10',
+2020-08-07T17:14:26.977646+00:00 app[web.1]: room: '5241'
+2020-08-07T17:14:26.977647+00:00 app[web.1]: }
+2020-08-07T17:14:26.980707+00:00 app[web.1]: can {
+2020-08-07T17:14:26.980709+00:00 app[web.1]: type: 'candidate',
+2020-08-07T17:14:26.980709+00:00 app[web.1]: label: 0,
+2020-08-07T17:14:26.980710+00:00 app[web.1]: id: '0',
+2020-08-07T17:14:26.980711+00:00 app[web.1]: candidate: 'candidate:10872568 1 tcp 1518283007 2405:204:8005:59e2:24a0:750a:f801:314e 9 typ host tcptype active generation 0 ufrag OTRD network-id 2 network-cost 10',
+2020-08-07T17:14:26.980711+00:00 app[web.1]: room: '5241'
+2020-08-07T17:14:26.980711+00:00 app[web.1]: }
+2020-08-07T17:14:26.983302+00:00 app[web.1]: can {
+2020-08-07T17:14:26.983304+00:00 app[web.1]: type: 'candidate',
+2020-08-07T17:14:26.983304+00:00 app[web.1]: label: 0,
+2020-08-07T17:14:26.983304+00:00 app[web.1]: id: '0',
+2020-08-07T17:14:26.983325+00:00 app[web.1]: candidate: 'candidate:4053056804 1 tcp 1518214911 192.168.43.180 9 typ host tcptype active generation 0 ufrag OTRD network-id 1 network-cost 10',
+2020-08-07T17:14:26.983326+00:00 app[web.1]: room: '5241'
+2020-08-07T17:14:26.983326+00:00 app[web.1]: }
+2020-08-07T17:14:27.395874+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=video-webrtc-hac.herokuapp.com request_id=d3854a7b-6bf0-4cfe-8f06-151af475490c fwd="49.34.97.225" dyno=web.1 connect=0ms service=3ms status=404 bytes=394 protocol=https
+2020-08-07T17:14:27.673517+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=video-webrtc-hac.herokuapp.com request_id=1fdb498f-0944-42b1-990c-08d2121beafb fwd="49.34.97.225" dyno=web.1 connect=0ms service=4ms status=404 bytes=394 protocol=https
+2020-08-07T17:15:00.004509+00:00 heroku[router]: at=info method=GET path="/socket.io/?EIO=3&transport=websocket&sid=x3bQQ0XEqpz5yw4mAAAE" host=video-webrtc-hac.herokuapp.com request_id=22add1f2-6576-43db-acc7-b2ae174bf45b fwd="157.32.148.214" dyno=web.1 connect=1ms service=70636ms status=101 bytes=2333 protocol=https
