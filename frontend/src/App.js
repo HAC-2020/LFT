@@ -5,47 +5,62 @@ import { pink } from "@material-ui/core/colors";
 import SignIn from "./SignIn";
 import ForgotPassword from "./ForgotPassword";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MainContext from "./MainContext";
-import Dashboard from "./Pages/Dashboard/Dashboard";
-
-import FacultyDashboard from "./Pages/FacultyDashboard.js";
+import StudentDashboard from "./Pages/StudentDashboard";
+import FacultyDashboard from "./Pages/FacultyDashboard";
+import AdminDashboard from "./Pages/AdminDashboard";
 
 const theme = createMuiTheme({
   palette: {
+    type: "dark",
     primary: pink,
     secondary: pink,
   },
 });
 
-function App() {
-  let UserData = {
+class App extends React.Component {
+  state = {
     name: "Pushpendra Vishwakarma",
     email: "pushpendra.hpx2001@gmail.com",
     phone: 9327046282,
     uid: "estgr6yhvdrvs6rvsryst",
+    role: "student",
   };
 
-  return (
-    <ThemeProvider theme={theme}>
-      <MainContext.Provider value={UserData}>
-        <Router>
-          <Switch>
-            <Route path="/forgot" exact component={ForgotPassword} />
-            <Route path="/" exact component={SignIn} />
-            <Route path="/student/home" exact component={Dashboard} />
-            <Route path="/home" exact>
-              <Redirect to="/faculty/home" />
-            </Route>{" "}
-            {/* this route is for just Testing Purpose */}
-            <Route path="/faculty/home" exact>
-              <FacultyDashboard />
-            </Route>
-          </Switch>
-        </Router>
-      </MainContext.Provider>
-    </ThemeProvider>
-  );
+  renderDashboard() {
+    switch (this.state.role) {
+      case "student":
+        return StudentDashboard;
+      case "invigilator":
+        return FacultyDashboard;
+      case "admin":
+        return AdminDashboard;
+      default:
+        return SignIn;
+    }
+  }
+
+  render() {
+    return (
+      <ThemeProvider theme={theme}>
+        <MainContext.Provider value={this.state}>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={SignIn} />
+              <Route exact path="/forgot" component={ForgotPassword} />
+              <Route exact path="/home" component={this.renderDashboard()} />
+
+              {/* the below routes are for just testing */}
+              <Route exact path="/student" component={StudentDashboard} />
+              <Route exact path="/faculty" component={FacultyDashboard} />
+              <Route exact path="/admin" component={AdminDashboard} />
+            </Switch>
+          </Router>
+        </MainContext.Provider>
+      </ThemeProvider>
+    );
+  }
 }
 
 export default App;

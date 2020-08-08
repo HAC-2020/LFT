@@ -6,5 +6,5 @@ export default function FacultyDashboard() {
 
   console.log(userData);
 
-  return <Navbar title="Faculty Dashboard" />;
+  return <Navbar title="Admin Dashboard" />;
 }
