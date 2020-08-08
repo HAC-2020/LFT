@@ -1,0 +1,14 @@
+.mainContainer {
+  margin-top: 50px;
+}
+
+.addUserForm {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+/* 
+.addUserForm input {
+  min-width: 30px;
+} */
