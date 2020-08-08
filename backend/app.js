@@ -1,6 +1,7 @@
 const express = require('express');
 const xss = require('xss-clean');
 const cookieparser = require('cookie-parser');
+const cors = require('cors');
 
 const AppError = require('./utils/AppError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -24,6 +25,8 @@ app.use((req, res, next) => {
     res.append('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
+
+app.use(cors());
 
 // ROUTE MIDDLEWARE
 app.use('/api/v1/user', userRouter);

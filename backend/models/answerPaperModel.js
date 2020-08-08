@@ -6,6 +6,8 @@ const AnswerPaperSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Must Provide Name!']
     },
+    user_name: String,
+    user_email: String,
     last_modified: Date,
     answers: {
         type: Array
@@ -13,10 +15,9 @@ const AnswerPaperSchema = new mongoose.Schema({
     active: {
         type: Boolean,
         default: false
-        // select: false
     }
 });
 
-QuestionPaper = mongoose.model('QuestionPaper', QuestionPaperSchema);
+AnswerPaper = mongoose.model('AnswerPaper', AnswerPaperSchema);
 
-module.exports = QuestionPaper;
+module.exports = AnswerPaper;
