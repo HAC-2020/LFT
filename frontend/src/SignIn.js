@@ -15,7 +15,8 @@ import BasicEntry from "./BasicEntry";
 import Copyright from "./Copyright";
 
 class SignIn extends React.Component {
-  login = () => {
+  login = e => {
+    e.stopPropagation();
     axios.post("https://lft-hac.herokuapp.com/api/v1/user/login").then(console.log);
   };
 
@@ -52,10 +53,10 @@ class SignIn extends React.Component {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button type="submit" fullWidth variant="contained" color="primary">
+          <Button type="submit" fullWidth variant="contained" color="primary" onClick={this.login}>
             Sign In
           </Button>
-          <Grid container>
+          <Grid container className="forgotpass">
             <Grid item xs>
               <Link to="/forgot">Forgot password?</Link>
             </Grid>
