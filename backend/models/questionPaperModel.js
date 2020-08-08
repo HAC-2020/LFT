@@ -19,9 +19,8 @@ const QuestionPaperSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'Must Provide total questions!']
     },
-    paper_url: {
-        type: String,
-        required: [true, 'Must Provide the link to PDF']
+    questions: {
+        type: Array
     },
     active: {
         type: Boolean,
