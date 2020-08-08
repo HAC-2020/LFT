@@ -5,6 +5,7 @@ const cookieparser = require('cookie-parser');
 const AppError = require('./utils/AppError');
 const globalErrorHandler = require('./controllers/errorController');
 const userRouter = require('./routes/userRouter');
+const questionPaperRouter = require('./routes/questionPaperRouter');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.static(`${__dirname}/public`));
 
 // ROUTE MIDDLEWARE
 app.use('/api/v1/user', userRouter);
+app.use('/api/v1/paper', questionPaperRouter);
 
 // ROUTE NOT FOUND
 app.all('*', (req, res, next) => {

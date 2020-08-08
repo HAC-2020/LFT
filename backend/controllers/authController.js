@@ -202,7 +202,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 });
 
 exports.deleteUser = catchAsync(async (req, res) => {
-    await User.findByIdAndUpdate({ _id: req.params.user_id }, { active: false });
+    await User.findByIdAndUpdate({ user_email: req.params.email_id }, { active: false });
 
     res.status(204).json({
         status: 'success',
