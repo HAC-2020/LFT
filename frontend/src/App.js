@@ -7,7 +7,7 @@ import ForgotInSide from "./ForgotInSide";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import MainContext from "./MainContext";
-import Dashboard from "./Pages/Dashboard/Dashboard";
+import Dashboard from "./Pages/StudentDashboard/StudentDashboard.js";
 
 import FacultyDashboard from "./Pages/FacultyDashboard.js";
 
@@ -28,6 +28,7 @@ function App() {
     uid:'estgr6yhvdrvs6rvsryst'
   }
 
+  let isStudent = true;
 
   return (
     <ThemeProvider theme={theme}>
@@ -40,16 +41,21 @@ function App() {
             <Route path="/" exact>
               <SignInSide />
             </Route>
-            <Route path="/student/home" exact>
-              <Dashboard />
-            </Route>
-            <Route path="/home" exact> 
-            <Redirect to='/faculty/home' />
+            {
+              isStudent === true ? <Route path="/student/home" exact>
+                                      <Dashboard />
+                                    </Route>
+                                :
+                                    <Route path="/faculty/home" exact>
+                                      <FacultyDashboard />
+                                    </Route>
+                                  
+            }
             
-            </Route> {/* this route is for just Testing Purpose */ }
-            <Route path="/faculty/home" exact>
-              <FacultyDashboard />
-            </Route>
+            {/* Below is for those routes which doesn't matched above ! */}
+           <Route path="**" exact>
+              <Redirect to='/' />
+            </Route> 
           </Switch>
         </Router>
       </MainContext.Provider>
