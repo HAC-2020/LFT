@@ -36,23 +36,23 @@ exports.createAnswerPaper = catchAsync(async (req, res) => {
 });
 
 exports.activateExam = catchAsync(async (req, res) => {
-    const papers = await QuestionPaper.findOneAndUpdate({ paper_id: req.params.paper_id }, { active: true });
+    const paper = await QuestionPaper.findOneAndUpdate({ paper_id: req.params.paper_id }, { active: true });
     res.status(200).json({
         status: 'success',
         success: true,
         data: {
-            papers
+            paper
         }
     });
 });
 
 exports.deactivateExam = catchAsync(async (req, res) => {
-    const papers = await QuestionPaper.findOneAndUpdate({ paper_id: req.params.paper_id }, { active: false });
+    const paper = await QuestionPaper.findOneAndUpdate({ paper_id: req.params.paper_id }, { active: false });
     res.status(200).json({
         status: 'success',
         success: true,
         data: {
-            papers
+            paper
         }
     });
 });
