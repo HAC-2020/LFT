@@ -15,6 +15,17 @@ exports.getAllPapers = catchAsync(async (req, res) => {
     });
 });
 
+exports.getOnePaper = catchAsync(async (req, res) => {
+    const paper = await QuestionPaper.find({ paper_id: req.params.paper_id });
+    res.status(200).json({
+        status: 'success',
+        success: true,
+        data: {
+            paper
+        }
+    });
+});
+
 exports.createPaper = catchAsync(async (req, res) => {
     const token = generateToken();
     const paper = await QuestionPaper.create({
@@ -49,11 +60,13 @@ exports.editPaper = catchAsync(async (req, res) => {
 
 
 exports.addQuestion = catchAsync(async (req, res) => {
-    req.body.last_modified = new Date(Date.now());
     const paper = await QuestionPaper.find({ paper_id: req.params.paper_id });
     let questions = paper[0].questions;
     questions.push(req.body.newQuestion);
-    await QuestionPaper.findOneAndUpdate({ paper_id: req.params.paper_id }, { questions });
+    await QuestionPaper.findOneAndUpdate({ paper_id: req.params.paper_id }, {
+        questions,
+        last_modified: new Date(Date.now())
+    });
 
     res.status(200).json({
         status: 'success',
@@ -65,22 +78,18 @@ exports.addQuestion = catchAsync(async (req, res) => {
 });
 
 exports.removeQuestion = catchAsync(async (req, res) => {
-    req.body.last_modified = new Date(Date.now());
     const paper = await QuestionPaper.find({ paper_id: req.params.paper_id });
     let questions = paper[0].questions;
     questions.splice(req.params.question_number, 1);
-    await QuestionPaper.findOneAndUpdate({ paper_id: req.params.paper_id }, { questions });
-
-    res.status(200).json({
-        status: 'success',
-        success: true,
-        data: {
-            paper
-        }
+    await QuestionPaper.findOneAndUpdate({ paper_id: req.params.paper_id }, {
+        questions,
+        last_modified: new Date(Date.now())
     });
+
+    res.status(204).json({});
 });
 
 exports.deletePaper = catchAsync(async (req, res) => {
     const paper = await QuestionPaper.findOneAndDelete({ paper_id: req.params.paper_id });
-    res.status(204).json();
+    res.status(204).json({});
 });

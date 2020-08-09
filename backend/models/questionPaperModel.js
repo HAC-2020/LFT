@@ -24,8 +24,8 @@ const QuestionPaperSchema = new mongoose.Schema({
     },
     active: {
         type: Boolean,
-        default: false,
-        select: false
+        default: false
+        // select: false
     }
 });
 
