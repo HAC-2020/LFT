@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import Button from '@material-ui/core/Button';
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { pink } from "@material-ui/core/colors";
@@ -20,17 +20,30 @@ const theme = createMuiTheme({
   },
 });
 
-class App extends React.Component {
-  state = {
-    name: "Pushpendra Vishwakarma",
-    email: "pushpendra.hpx2001@gmail.com",
-    phone: 9327046282,
-    uid: "estgr6yhvdrvs6rvsryst",
-    role: "student",
-  };
+function App(){
 
-  renderDashboard() {
-    switch (this.state.role) {
+  let token = localStorage.getItem("token");
+  let isStudent = true;
+
+  // console.log(token)
+  if(token !== null){
+    isStudent = true;
+  }else{
+    isStudent = false;
+  }
+
+
+  let changeLoginStatus = (value)=>{
+    setState({loginStatus:value,changeLoginStatus})
+  }
+
+  let [state,setState] = useState({
+    loginStatus:false,
+    changeLoginStatus:changeLoginStatus
+  })
+
+  function renderDashboard() {
+    switch (state.role) {
       case "student":
         return StudentDashboard;
       case "invigilator":
@@ -41,16 +54,14 @@ class App extends React.Component {
         return SignIn;
     }
   }
-
-  render() {
     return (
       <ThemeProvider theme={theme}>
-        <MainContext.Provider value={this.state}>
+        <MainContext.Provider value={state}>
           <Router>
             <Switch>
               <Route exact path="/" component={SignIn} />
               <Route exact path="/forgot" component={ForgotPassword} />
-              <Route exact path="/home" component={this.renderDashboard()} />
+              <Route exact path="/home" component={renderDashboard()} />
 
               {/* the below routes are for just testing */}
               <Route exact path="/student" component={StudentDashboard} />
@@ -62,7 +73,6 @@ class App extends React.Component {
         </MainContext.Provider>
       </ThemeProvider>
     );
-  }
 }
 
 export default App;
